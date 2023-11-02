@@ -2,7 +2,7 @@
 
 const Audio = ({audioFile}) => {
     return(
-        <div>
+        <div className="flex justify-center w-full">
             <audio src={audioFile} controls/>
         </div>
     )

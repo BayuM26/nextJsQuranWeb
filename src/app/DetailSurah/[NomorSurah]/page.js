@@ -1,3 +1,4 @@
+const ArrowBack = require("@/components/ArrowBack");
 const Nomor = require("@/components/Nomor");
 const { default: Link } = require("next/link");
 
@@ -7,6 +8,7 @@ const DetailSurah = async({ params }) => {
     var nomor = DataApiDetailSurah.data.nomor
     return(
         <div className="md:p-20 sm:p-10 p-2 space-y-4">
+            <ArrowBack/>
             <div>
                 <h1 className="text-2xl font-semibold text-center">{DataApiDetailSurah.data.namaLatin}</h1>
             </div>
