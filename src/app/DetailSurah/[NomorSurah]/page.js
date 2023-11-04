@@ -2,9 +2,9 @@ const ArrowBack = require("@/components/ArrowBack");
 const Nomor = require("@/components/Nomor");
 const { default: Link } = require("next/link");
 
-const DetailSurah = async({ params }) => {
-    let ApiDetailSurah = await fetch(`https://equran.id/api/v2/surat/${params.NomorSurah}`)
-    let DataApiDetailSurah = await ApiDetailSurah.json()
+const Page = async({ params }) => {
+    const ApiDetailSurah = await fetch(`https://equran.id/api/v2/surat/${params.nomorSurah}`)
+    const DataApiDetailSurah = await ApiDetailSurah.json()
     var nomor = DataApiDetailSurah.data.nomor
     return(
         <div className="md:p-20 sm:p-10 p-2 space-y-4">
@@ -13,9 +13,9 @@ const DetailSurah = async({ params }) => {
                 <h1 className="text-2xl font-semibold text-center">{DataApiDetailSurah.data.namaLatin}</h1>
             </div>
             {
-                DataApiDetailSurah.data.ayat.map((data) => {
+                DataApiDetailSurah.data.ayat.map((data,index) => {
                     return(
-                        <div className="p-4">
+                        <div className="p-4" key={index}>
                             <div className="space-y-10">
                                 <div className="flex items-center justify-between">
                                     <div className="me-5">
@@ -60,4 +60,4 @@ const DetailSurah = async({ params }) => {
     )
 }
 
-module.exports = DetailSurah
+module.exports = Page

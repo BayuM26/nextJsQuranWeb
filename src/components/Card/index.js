@@ -3,6 +3,7 @@ const Audio = require("./Audio");
 const Nomor = require("../Nomor");
 
 const Card = ({Api}) => {
+    
     return (
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           {
@@ -24,7 +25,7 @@ const Card = ({Api}) => {
                         </div>
                         <p className="md:text-lg sm:text-md text-md md:flex sm:flex hidden font-serif">{data.nama}</p>
                     </div>
-                    <Audio audioFile={data.audio}/>
+                    <Audio audioFile={data.audioFull['03']}/>
                 </Link>
               )
             })
